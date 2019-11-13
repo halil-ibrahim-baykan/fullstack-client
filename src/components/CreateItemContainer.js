@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createItem } from "../actions";
-import CreateItem from "./CreateForm";
+import CreateItem from "./CreateItem";
 
-class CreateFormContainer extends React.Component {
+class CreateItemContainer extends React.Component {
   state = {
     title: "",
     description: "",
@@ -32,7 +32,7 @@ class CreateFormContainer extends React.Component {
 
   render() {
     return (
-      <CreateForm
+      <CreateItem
         onSubmit={this.onSubmit}
         onChange={this.onChange}
         values={this.state}
@@ -41,4 +41,4 @@ class CreateFormContainer extends React.Component {
   }
 }
 
-export default connect(null, { createItem })(CreateFormContainer);
+export default connect(null, { createItem })(CreateItemContainer);

@@ -2,7 +2,7 @@ import request from "superagent";
 
 export const ALL_ITEMS = "ALL_ITEMS";
 
-const baseUrl = "http://localhost:4001";
+const baseUrl = "http://localhost:4003";
 
 function allItems(payload) {
   return {
@@ -59,3 +59,17 @@ function jwt(payload) {
     payload
   };
 }
+export const login = (email, password) => dispatch => {
+  request
+    .post(`${baseUrl}/logins`)
+    .send({ email, password })
+    .then(response => {
+      const action = jwt(response.body.jwt);
+
+      dispatch(action);
+    });
+};
+
+export const signUp = (email, password) => dispatch => {
+  request.post(`${baseUrl}/seller`).send({ email, password });
+};

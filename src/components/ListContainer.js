@@ -9,14 +9,14 @@ class ListContainer extends React.Component {
   }
 
   render() {
-    return <List images={this.props.items} seller={this.props.seller} />;
+    return <List items={this.props.items} seller={this.props.seller} />;
   }
 }
 
 function mapStateToProps(state) {
   return {
     items: state.items,
-    user: state.seller
+    seller: state.seller
   };
 }
 

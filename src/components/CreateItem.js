@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CreateItem(props) {
   const { onSubmit, onChange, values } = props;
-  const { title, url } = values;
+  const { title, url, description, price } = values;
 
   return (
     <form onSubmit={onSubmit}>
